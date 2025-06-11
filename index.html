@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YeaPlanner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/11/css/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>YearPlanner</h1>
+      <img src="/11/img/8476658.png" alt="ToDoPicture" class="header-logo">
+    </header>
+
+    <form class="task-input">
+      <input class="input-area" type="text" placeholder="Введите задачу">
+      <button class="add-btn" type="submit">Добавить</button>
+    </form>
+
+    <div class="filters">
+      <button class="filter-btn" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="active">Активные</button>
+      <button class="filter-btn" data-filter="completed">Выполненные</button>
+    </div>
+
+    <div class="summary">
+      <p class="total-count">Всего: 0</p>
+      <p class="completed-count">Завершено: 0</p>
+    </div>
+
+    <div class="task-list"></div>
+    <div class="note-no-tasks hidden">Вы еще не добавили задачи</div>
+  </div>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
