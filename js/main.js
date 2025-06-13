@@ -1,11 +1,16 @@
-import { addTask, tasks, currentFilter, setFilter } from './state.js';
-import { renderAllTasks } from './render.js';
+import { addTask, setFilter } from './state.js';
+import { renderAllTasks } from './ui.js';
+import { renderTask } from './render.js';
 
 const inputEl = document.querySelector(".input-area");
 const addBtnEl = document.querySelector(".add-btn");
 const filterBtns = document.querySelectorAll(".filter-btn");
 
-renderAllTasks();
+function updateUI() {
+  renderAllTasks(renderTask);
+}
+
+updateUI();
 
 addBtnEl.addEventListener("click", (e) => {
   e.preventDefault();
@@ -14,12 +19,12 @@ addBtnEl.addEventListener("click", (e) => {
 
   addTask(text);
   inputEl.value = "";
-  renderAllTasks();
+  updateUI();
 });
 
 filterBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     setFilter(btn.dataset.filter);
-    renderAllTasks();
+    updateUI();
   });
 });
